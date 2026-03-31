@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: alzari555/emebe-pagina
+  branch: main
+  site_domain: emebestudio.com
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "portafolio"
+    label: "Portafolio"
+    files:
+      - label: "Gestor de Proyectos"
+        name: "proyectos"
+        file: "data/portafolio.json"
+        description: "Añade, edita y organiza los proyectos que aparecerán en la galería de la página de portafolio."
+        fields:
+          - label: "Proyectos"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Descripción", name: "description", widget: "text"}
+              - {label: "Imagen Principal", name: "image", widget: "image"}
+              - {label: "Formato en Grilla", name: "format", widget: "select", options: [{label: "Cuadrada (con esquina redondeada)", value: "square"}, {label: "Vertical", value: "portrait"}, {label: "Horizontal", value: "landscape"}], default: "square"}
+              - label: "Galería Adicional (Opcional)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Imagen Extra", name: "image", widget: "image"}

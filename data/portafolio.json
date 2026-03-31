@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "title": "Minimalismo Urbano",
+      "description": "Una reforma integral de un apartamento céntrico, enfocada en maximizar la luz natural y crear un espacio fluido e interconectado. Se utilizaron materiales nobles como la madera de roble, microcemento y toques de hierro negro para aportar un carácter urbano pero sofisticado.",
+      "image": "/assets/hero_bg.png",
+      "format": "square",
+      "gallery": [
+        { "image": "/assets/services_bg.png" }
+      ]
+    },
+    {
+      "title": "Estudio Creativo",
+      "description": "Diseño y ejecución de mobiliario a medida para un estudio de diseño. El objetivo era lograr zonas de trabajo colaborativo que a su vez pudiesen ser privadas. Destaca el gran escritorio central y la estantería de piso a techo que funciona como exhibidor de materiales.",
+      "image": "/assets/services_bg.png",
+      "format": "portrait",
+      "gallery": []
+    },
+    {
+      "title": "Refugio Serrano",
+      "description": "Logística y styling completo para una residencia en las sierras. La paleta de colores se inspiró en el entorno natural, trabajando tonos tierra, piedras, y una gran presencia de luz gracias a ventanales diseñados estratégicamente.",
+      "image": "/assets/hero_bg.png",
+      "format": "landscape",
+      "gallery": []
+    }
+  ]
+}

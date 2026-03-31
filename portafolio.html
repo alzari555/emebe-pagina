@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Emebe Estudio</title>
+    <meta name="description" content="Explora los proyectos de diseño de interiores minimalistas de Emebe Estudio.">
+    <meta name="view-transition" content="same-origin">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-portfolio">
+    <header class="navbar navbar-solid">
+        <div class="container nav-content">
+            <a href="index.html" class="logo-link">
+                <!-- Fallback to text if logo fails to load -->
+                <img src="assets/logo.png" alt="Emebe Logo" class="nav-logo" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#estudio">Estudio</a>
+                <a href="index.html#competencias">Competencias</a>
+                <a href="index.html#contacto" class="btn-primary">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="portfolio-main">
+        <section class="portfolio-header">
+            <div class="container text-center">
+                <span class="subtitle">Nuestro Trabajo</span>
+                <h1>Portafolio</h1>
+                <p class="large-text">Una selección de proyectos diseñados con propósito y funcionalidad, destacando la esencia del diseño minimalista.</p>
+            </div>
+        </section>
+
+        <section class="portfolio-content container">
+            <div id="gallery-container" class="portfolio-grid">
+                <!-- Data will be populated via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for details -->
+    <dialog id="project-modal" class="project-modal">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Cerrar"><i class="ph ph-x"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image-col" id="modal-images">
+                    <!-- Images will be injected here -->
+                </div>
+                <div class="modal-text-col">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-desc" class="modal-desc"></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contacto">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Emebe Logo" class="footer-logo" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
+                <p>Estudio de diseño de interiores.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contacto</h3>
+                <p>hola@emebestudio.com</p>
+                <p>+52 123 456 7890</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="portafolio.html" aria-label="Portafolio"><i class="ph-fill ph-folder-open"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#" target="_blank" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Emebe Estudio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('gallery-container');
+            const modal = document.getElementById('project-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const modalImages = document.getElementById('modal-images');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+
+            // Set up view transition for the h1 element specifically to have it slide or morph nicely
+            const pageH1 = document.querySelector('.portfolio-header h1');
+            pageH1.style.viewTransitionName = 'page-title';
+
+            // Close modal events
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('closing');
+                setTimeout(() => {
+                    modal.close();
+                    modal.classList.remove('closing');
+                }, 300); // Matches CSS transition time
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) { // Click on pseudo-element backdrop
+                    modal.classList.add('closing');
+                    setTimeout(() => {
+                        modal.close();
+                        modal.classList.remove('closing');
+                    }, 300);
+                }
+            });
+
+            try {
+                // Fetch data with cache busting
+                const timestamp = new Date().getTime();
+                const response = await fetch(`data/portafolio.json?v=${timestamp}`, { cache: "no-store", headers: { 'Cache-Control': 'no-cache' } });
+                
+                if (!response.ok) throw new Error('Data not found');
+                
+                const data = await response.json();
+                const items = data.items || [];
+                
+                if (items.length === 0) {
+                    container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1;">Próximamente estaremos publicando nuestros proyectos.</p>';
+                    return;
+                }
+
+                items.forEach((item, index) => {
+                    // Valid formats: square, portrait, landscape
+                    const formatClass = `format-${item.format || 'square'}`;
+                    const imgCornerClass = item.format === 'square' ? 'quarter-circle-tr' : '';
+                    
+                    // We append a query param to dodge caching entirely
+                    const imgSrc = `${item.image}?v=${timestamp}`;
+                    
+                    const div = document.createElement('div');
+                    div.className = `grid-item ${formatClass}`;
+                    div.dataset.index = index;
+                    div.innerHTML = `
+                        <div class="image-wrapper ${imgCornerClass}">
+                            <img src="${imgSrc}" alt="${item.title}" loading="lazy">
+                            <div class="overlay">
+                                <h3>${item.title}</h3>
+                                <span>Ver detalles <i class="ph ph-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    `;
+
+                    div.addEventListener('click', () => {
+                        openModal(item, timestamp);
+                    });
+
+                    container.appendChild(div);
+                });
+
+            } catch (error) {
+                console.error("Error loading portfolio:", error);
+                container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1;">No se pudo cargar el portafolio. Intenta más tarde.</p>';
+            }
+
+            function openModal(item, timestamp) {
+                modalTitle.textContent = item.title;
+                modalDesc.textContent = item.description;
+                
+                // Add main image and extra images
+                let html = `<img src="${item.image}?v=${timestamp}" alt="${item.title}" class="main-modal-img">`;
+                
+                if (item.gallery && item.gallery.length > 0) {
+                    item.gallery.forEach(gImg => {
+                        if(gImg.image) html += `<img src="${gImg.image}?v=${timestamp}" alt="Galería de ${item.title}" class="extra-modal-img">`;
+                    });
+                }
+                
+                modalImages.innerHTML = html;
+                modal.showModal();
+            }
+        });
+    </script>
+</body>
+</html>
