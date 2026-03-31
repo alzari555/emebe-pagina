@@ -1,62 +1,55 @@
 {
   "items": [
     {
-      "title": "sdvujhavfdjhsdvfjhdsaf",
-      "description": "dfasaskfvbiajwsfdkasfuigfasdiugafeiugfediugsedfiusedfgiu",
+      "title": "sfafgsdgwsegeg",
+      "description": "fwqwqaefqftgwtg",
+      "image": "/assets/uploads/Captura de pantalla 2025-07-16 131237.png",
+      "format": "landscape",
+      "gallery": [
+        {
+          "image": "/assets/uploads/bafkreigk3gkrnqpz4bnhk2jsbl24ahlbq7yo3hsas55hxzhli3gbb3bdae.jpg"
+        }
+      ]
+    },
+    {
+      "title": "fasdasefgeag",
+      "description": "wfdawefawefqwe",
       "image": "/assets/uploads/bafkreigk3gkrnqpz4bnhk2jsbl24ahlbq7yo3hsas55hxzhli3gbb3bdae.jpg",
       "format": "square",
       "gallery": []
     },
     {
-      "title": "wqfhesfdgiouhesftIUOHESGfiou",
-      "description": "egefuiguiegiefuggefiugefui",
-      "image": "/assets/uploads/EMEBE 3.svg",
-      "format": "portrait",
-      "gallery": [
-        {
-          "image": "/assets/uploads/fdgdfc.png"
-        }
-      ]
-    },
-    {
-      "title": "<dsgd<sfa<ge",
-      "description": "dfdg<sgfeggrs",
-      "image": "/assets/uploads/cha.png",
-      "format": "landscape",
-      "gallery": []
-    },
-    {
-      "title": "bxfxbvxfczbdf",
-      "description": "gszfbrfhsdrfhbdrfrfhbrfhbrfh",
+      "title": "adsfaefawe",
+      "description": "fasfafawd",
       "image": "/assets/uploads/zo.jpg",
       "format": "portrait",
       "gallery": []
     },
     {
-      "title": "szcvsgfdxserg",
-      "description": "egsegawssegaseggsz",
-      "image": "/assets/uploads/emebe.svg",
-      "format": "square",
-      "gallery": []
-    },
-    {
-      "title": "dsvgdsfgeasdr",
-      "description": "twrdsghergesr",
+      "title": "dsfasfa",
+      "description": "asfaSFdasf",
       "image": "/assets/uploads/RebelleArtwork.jpg",
-      "format": "square",
-      "gallery": []
-    },
-    {
-      "title": "tgwesgftasrger",
-      "description": "dfagerfherash",
-      "image": "https://wallpapercave.com/wp/L8EAFv7.png",
       "format": "landscape",
       "gallery": []
     },
     {
-      "title": "gduiagesfiuawfg",
-      "description": "asasdefgegfegwegfefg",
-      "image": "/assets/uploads/Captura de pantalla 2025-07-16 131237.png",
+      "title": "easfsadfsadf",
+      "description": "fgfasfasgFEFASD",
+      "image": "/assets/uploads/fdgdfc.png",
+      "format": "portrait",
+      "gallery": []
+    },
+    {
+      "title": "SFAFAS",
+      "description": "SFAASFASDF",
+      "image": "/assets/uploads/EMEBE 3.svg",
+      "format": "portrait",
+      "gallery": []
+    },
+    {
+      "title": "ADASDFSAF",
+      "description": "SASFSAFASF",
+      "image": "/assets/uploads/emebe.svg",
       "format": "landscape",
       "gallery": []
     }
