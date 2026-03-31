@@ -478,8 +478,8 @@ img {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 280px;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  grid-auto-rows: 135px;
   grid-auto-flow: dense;
   gap: 1.5rem;
   margin-bottom: 6rem;
@@ -508,10 +508,10 @@ img {
   transition: transform 0.6s ease;
 }
 
-/* Configuraciones de Expansión (Spanning) */
+/* Configuraciones de Expansión Orgánica (Ratios fotográficos 1:1, 3:2, 2:3) */
 .format-square {
-  grid-column: span 1;
-  grid-row: span 1;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 /* Aplicar la esquina redondeada sólo a cuadros perfectos */
@@ -520,13 +520,31 @@ img {
 }
 
 .format-portrait {
-  grid-row: span 2;
-  grid-column: span 1;
+  grid-column: span 2;
+  grid-row: span 3;
 }
 
 .format-landscape {
-  grid-column: span 2;
-  grid-row: span 1;
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+/* En dispositivos móviles, apilar ordenadamente y mantener proporciones nativas */
+@media (max-width: 650px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .format-square,
+  .format-portrait,
+  .format-landscape {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .format-square .image-wrapper { aspect-ratio: 1 / 1; }
+  .format-portrait .image-wrapper { aspect-ratio: 3 / 4; }
+  .format-landscape .image-wrapper { aspect-ratio: 3 / 2; }
 }
 
 .grid-item:hover img {
