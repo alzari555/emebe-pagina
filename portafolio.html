@@ -140,8 +140,13 @@
                     const formatClass = `format-${item.format || 'square'}`;
                     const imgCornerClass = item.format === 'square' ? 'quarter-circle-tr' : '';
                     
+                    // Remover slash inicial para compatibilidad con Github Pages y archivos locales
+                    let imagePath = item.image || '';
+                    if (imagePath.startsWith('/')) {
+                        imagePath = imagePath.substring(1);
+                    }
                     // We append a query param to dodge caching entirely
-                    const imgSrc = `${item.image}?v=${timestamp}`;
+                    const imgSrc = `${imagePath}?v=${timestamp}`;
                     
                     const div = document.createElement('div');
                     div.className = `grid-item ${formatClass}`;
@@ -172,12 +177,19 @@
                 modalTitle.textContent = item.title;
                 modalDesc.textContent = item.description;
                 
+                let mainImgPath = item.image || '';
+                if (mainImgPath.startsWith('/')) mainImgPath = mainImgPath.substring(1);
+                
                 // Add main image and extra images
-                let html = `<img src="${item.image}?v=${timestamp}" alt="${item.title}" class="main-modal-img">`;
+                let html = `<img src="${mainImgPath}?v=${timestamp}" alt="${item.title}" class="main-modal-img">`;
                 
                 if (item.gallery && item.gallery.length > 0) {
                     item.gallery.forEach(gImg => {
-                        if(gImg.image) html += `<img src="${gImg.image}?v=${timestamp}" alt="Galería de ${item.title}" class="extra-modal-img">`;
+                        if(gImg.image) {
+                            let gImgPath = gImg.image;
+                            if (gImgPath.startsWith('/')) gImgPath = gImgPath.substring(1);
+                            html += `<img src="${gImgPath}?v=${timestamp}" alt="Galería de ${item.title}" class="extra-modal-img">`;
+                        }
                     });
                 }
                 
