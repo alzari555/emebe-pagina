@@ -1,5 +1,3 @@
-Este es el repositorio base de la página estática del proyecto Emebe ("emebe-pagina"). Este sitio está construido utilizando HTML, CSS, y JavaScript puro de forma estática para mantenerlo simple y altamente performante.
-
 ## Licencia
 
 Este proyecto está distribuido bajo la **Licencia MIT**. Esto significa que es una licencia permisiva y libre, puedes clonarla, modificarla y usarla para tus propios proyectos con una única condición: **debes incluir la atribución al autor original (Emebe/Migue)** dejando intacto el archivo `LICENSE` y los derechos de autor que vienen en él.
