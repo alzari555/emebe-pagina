@@ -6,9 +6,7 @@ Este es el repositorio base de la página estática del proyecto Emebe ("emebe-p
 
 Este proyecto está distribuido bajo la **Licencia MIT**. Esto significa que es una licencia permisiva y libre, puedes clonarla, modificarla y usarla para tus propios proyectos con una única condición: **debes incluir la atribución al autor original (Emebe/Migue)** dejando intacto el archivo `LICENSE` y los derechos de autor que vienen en él.
 
-## Despliegue y Uso (Para Clientes)
-
-Si eres un cliente y deseas utilizar este repositorio para hostear tu propia página en GitHub Pages bajo tu propio nombre de usuario, sigue estos pasos:
+## Despliegue y Uso 
 
 ### 1. Hacer un Fork
 Haz clic en el botón superior derecho de esta página de GitHub que dice **"Fork"** (o "Bifurcar"). Esto copiará todo este repositorio a tu propia cuenta de GitHub de forma segura.
