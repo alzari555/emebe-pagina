@@ -79,6 +79,14 @@
       "format": "square",
       "image_shape": "",
       "gallery": []
+    },
+    {
+      "title": "fdddf",
+      "description": "ssdff",
+      "image": "/assets/uploads/pexels-vince-2227832.webp",
+      "format": "portrait",
+      "image_shape": "none",
+      "gallery": []
     }
   ]
 }
