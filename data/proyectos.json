@@ -63,6 +63,22 @@
       "format": "portrait",
       "image_shape": "none",
       "gallery": []
+    },
+    {
+      "title": "i",
+      "description": "i",
+      "image": "/assets/uploads/pexels-orlovamaria-4906249.webp",
+      "format": "portrait",
+      "image_shape": "blob-shape",
+      "gallery": []
+    },
+    {
+      "title": "j",
+      "description": "j",
+      "image": "/assets/uploads/pexels-toulouse-3457292.webp",
+      "format": "square",
+      "image_shape": "",
+      "gallery": []
     }
   ]
 }
