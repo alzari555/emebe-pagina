@@ -5,7 +5,7 @@
       "description": "a",
       "image": "/assets/uploads/services_bg.webp",
       "format": "square",
-      "image_shape": "",
+      "image_shape": "none",
       "gallery": []
     },
     {
