@@ -5,7 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
     <title>Emebe | Estudio de Diseño de Interiores</title>
-    <meta name="description" content="Emebe es un estudio de diseño de interiores creando espacios minimalistas y elegantes.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    
+    <!-- SEO & Site Name -->
+    <meta name="description" content="Emebe es un estudio argentino de diseño de interiores creando espacios minimalistas y elegantes, desde Córdoba para todo el país.">
+    <meta name="application-name" content="Emebe Estudio">
+    <meta property="og:site_name" content="Emebe Estudio">
+    <meta property="og:title" content="Emebe | Estudio de Diseño de Interiores">
+    <meta property="og:description" content="Emebe es un estudio argentino de diseño de interiores creando espacios minimalistas y elegantes, desde Córdoba para todo el país.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emebestudio.com/">
+    <meta property="og:image" content="https://mb-interiorismo.github.io/studio/assets/logo.png">
+
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Emebe Estudio",
+      "alternateName": [
+        "Emebe", 
+        "Estudio Emebe", 
+        "MB Studio", 
+        "MB Estudio", 
+        "mbestudio", 
+        "emebe estudio",
+        "MB Interiorismo",
+        "Emebe Interiorismo"
+      ],
+      "url": "https://mb-interiorismo.github.io/studio/"
+    }
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +55,7 @@
                 <img src="assets/logo.png" alt="Emebe Logo" class="nav-logo" style="view-transition-name: main-logo;" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
             </a>
             <nav class="nav-links">
-                <a href="#estudio">Estudio</a>
-                <a href="#competencias">Competencias</a>
+                <a href="#servicios">Servicios</a>
                 <a href="#contacto" class="btn-primary">Contacto</a>
             </nav>
         </div>
@@ -35,14 +67,14 @@
             <div class="container hero-content">
                 <div class="hero-text">
                     <span class="subtitle">Diseño de Interiores</span>
-                    <h1>Espacios con <span class="cursive-text">alma</span> y elegancia</h1>
+                    <h1>Espacios que cuentan <span class="cursive-text">historias</span></h1>
                     <p>En Emebe, transformamos tu entorno en un refugio minimalista. Diseñamos con propósito, cuidando cada detalle para crear experiencias visuales y sensoriales únicas.</p>
-                    <a href="portafolio.html" class="btn-primary mt-2">Ver Portafolio</a>
+                    <a href="proyectos.html" class="btn-primary mt-2">Ver Proyectos</a>
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="offset-frame">
-                        <div class="image-container quarter-circle-tr">
-                            <img src="assets/hero_bg.png" alt="Interiorismo Minimalista">
+                        <div id="hero-frame" class="image-container quarter-circle-tr">
+                            <img id="hero-img" src="assets/hero_bg.png" alt="Interiorismo Minimalista">
                         </div>
                     </div>
                 </div>
@@ -50,29 +82,29 @@
         </section>
 
         <!-- Competencies Section -->
-        <section class="services-section dark-bg" id="competencias">
+        <section class="services-section dark-bg" id="servicios">
             <div class="container services-grid">
                 <div class="services-image-wrapper">
                     <div class="offset-frame reverse-frame">
-                        <div class="image-container quarter-circle-tr">
-                            <img src="assets/services_bg.png" alt="Diseño de Habitación">
+                        <div id="services-frame" class="image-container quarter-circle-tr">
+                            <img id="services-img" src="assets/services_bg.png" alt="Diseño de Habitación">
                         </div>
                     </div>
                 </div>
                 <div class="services-text">
-                    <h2>Nuestras Competencias</h2>
+                    <h2>Nuestros Servicios</h2>
                     <ul class="services-list">
                         <li>
-                            <span class="service-title">Reformas Integrales</span>
-                            <p>Desde la renovación de casas residenciales hasta el diseño y ejecución de locales comerciales. Acompañamiento de principio a fin.</p>
+                            <span class="service-title">Reformas integrales</span>
+                            <p>Transformamos espacios desde cero, ya sea en viviendas o locales comerciales. Nos ocupamos de todo el proceso: desde la idea inicial hasta la ejecución final, acompañándote en cada etapa para que el resultado sea funcional, estético y coherente.</p>
                         </li>
                         <li>
-                            <span class="service-title">Logística y Mobiliario a Medida</span>
-                            <p>Nos encargamos de la gestión logística completa e incluimos el diseño y creación de muebles personalizados adaptados a las necesidades de cada espacio.</p>
+                            <span class="service-title">Logística y mobiliario a medida</span>
+                            <p>Gestionamos cada detalle del proyecto para que no tengas que preocuparte por nada. Diseñamos y desarrollamos mobiliario personalizado, adaptado a tu espacio, tus necesidades y tu estilo de vida.</p>
                         </li>
                         <li>
-                            <span class="service-title">Styling de Espacios</span>
-                            <p>Cuidamos los detalles finales, seleccionando meticulosamente el mobiliario, el arte y los accesorios para dotar a cada espacio de una identidad propia.</p>
+                            <span class="service-title">Styling de espacios</span>
+                            <p>Le damos identidad y carácter a cada ambiente a través de los detalles finales. Seleccionamos cuidadosamente muebles, iluminación, arte y accesorios para lograr espacios armónicos, equilibrados y con personalidad.</p>
                         </li>
                     </ul>
                 </div>
@@ -85,6 +117,11 @@
                 <span class="subtitle">Alcance Nacional</span>
                 <h2>Desde Córdoba para toda la <span class="cursive-text">Argentina</span></h2>
                 <p class="large-text">Nuestro estudio y centro de operaciones está ubicado en <strong>Córdoba capital</strong>, pero contamos con una estructura, logística y un equipo listo para diseñar, tomar y ejecutar proyectos integrales en <strong>cualquier provincia del país</strong>.</p>
+                
+                <div id="map-container" style="display: none; margin: 3rem auto 0; max-width: 500px; width: 100%;">
+                    <img id="map-img" src="" alt="Mapa de proyectos" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                    <p style="font-size: 0.85rem; color: var(--color-text-dark); margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">* provincias en las que ya hemos trabajado</p>
+                </div>
             </div>
         </section>
     </main>
@@ -94,26 +131,63 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <img src="assets/logo.png" alt="Emebe Logo" class="footer-logo" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
-                <p>Estudio de diseño de interiores.</p>
             </div>
             <div class="footer-links">
-                <h3>Contacto</h3>
-                <p>hola@emebestudio.com</p>
-                <p>+52 123 456 7890</p>
             </div>
             <div class="footer-social">
-                <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="portafolio.html" aria-label="Portafolio"><i class="ph-fill ph-folder-open"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
-                    <a href="#" target="_blank" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
-                    <a href="#" target="_blank" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
+                    <a href="proyectos.html" aria-label="Proyectos"><i class="ph-fill ph-folder-open"></i></a>
+                    <a href="https://www.instagram.com/estudio_emebe/" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@estudio_emebe" target="_blank" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61552558930244" target="_blank" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="https://wa.me/5493516534493" target="_blank" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Emebe Estudio. Todos los derechos reservados.</p>
+            <p>Desarrollado por <a href="https://github.com/alzari555" target="_blank">alzari555</a></p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const timestamp = new Date().getTime();
+                const response = await fetch(`data/inicio.json?v=${timestamp}`, { cache: "no-store", headers: { 'Cache-Control': 'no-cache' } });
+                if (!response.ok) return;
+                const data = await response.json();
+                
+                // Update Hero
+                if (data.hero_image) {
+                    let imgPath = data.hero_image.startsWith('/') ? data.hero_image.substring(1) : data.hero_image;
+                    imgPath = imgPath.replace(/\.(png|jpe?g)$/i, '.webp');
+                    document.getElementById('hero-img').src = `${imgPath}?v=${timestamp}`;
+                }
+                const heroShape = data.hero_shape || 'quarter-circle-tr';
+                document.getElementById('hero-frame').className = `image-container ${heroShape === 'none' ? '' : heroShape}`;
+
+                // Update Services
+                if (data.services_image) {
+                    let imgPath = data.services_image.startsWith('/') ? data.services_image.substring(1) : data.services_image;
+                    imgPath = imgPath.replace(/\.(png|jpe?g)$/i, '.webp');
+                    document.getElementById('services-img').src = `${imgPath}?v=${timestamp}`;
+                }
+                const servicesShape = data.services_shape || 'quarter-circle-tr';
+                document.getElementById('services-frame').className = `image-container ${servicesShape === 'none' ? '' : servicesShape}`;
+
+                // Update Map
+                const mapContainer = document.getElementById('map-container');
+                const mapImg = document.getElementById('map-img');
+                if (data.map_image) {
+                    let imgPath = data.map_image.startsWith('/') ? data.map_image.substring(1) : data.map_image;
+                    imgPath = imgPath.replace(/\.(png|jpe?g)$/i, '.webp');
+                    mapImg.src = `${imgPath}?v=${timestamp}`;
+                    if (mapContainer) mapContainer.style.display = 'block';
+                }
+            } catch (error) {
+                console.error("Error loading home data:", error);
+            }
+        });
+    </script>
 </body>
 </html>

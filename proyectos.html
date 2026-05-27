@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Emebe Estudio</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    
+    <!-- SEO & Site Name -->
+    <meta name="description" content="Explora los proyectos de diseño de interiores minimalistas del estudio argentino Emebe.">
+    <meta name="application-name" content="Emebe Estudio">
+    <meta property="og:site_name" content="Emebe Estudio">
+    <meta property="og:title" content="Proyectos | Emebe Estudio">
+    <meta property="og:description" content="Explora el portafolio de reformas y styling de espacios del estudio argentino Emebe.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mb-interiorismo.github.io/studio/proyectos.html">
+    <meta property="og:image" content="https://mb-interiorismo.github.io/studio/assets/logo.png">
+
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Emebe Estudio",
+      "alternateName": [
+        "Emebe", 
+        "Estudio Emebe", 
+        "MB Studio", 
+        "MB Estudio", 
+        "mbestudio", 
+        "emebe estudio",
+        "MB Interiorismo",
+        "Emebe Interiorismo"
+      ],
+      "url": "https://mb-interiorismo.github.io/studio/"
+    }
+    </script>
+    <meta name="view-transition" content="same-origin">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-portfolio">
+    <header class="navbar navbar-solid">
+        <div class="container nav-content" style="justify-content: center;">
+            <a href="index.html" class="logo-link" aria-label="Volver al inicio">
+                <!-- Fallback to text if logo fails to load -->
+                <img src="assets/logo.png" alt="Emebe Logo" class="nav-logo" style="view-transition-name: main-logo;" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
+            </a>
+        </div>
+    </header>
+
+    <main class="portfolio-main">
+        <section class="portfolio-content container" style="padding-top: 10rem;">
+            <div id="gallery-container" class="portfolio-grid">
+                <!-- Data will be populated via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for details -->
+    <dialog id="project-modal" class="project-modal">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Cerrar"><i class="ph ph-x"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image-col" id="modal-images">
+                    <!-- Images will be injected here -->
+                </div>
+                <div class="modal-text-col">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-desc" class="modal-desc"></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contacto">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Emebe Logo" class="footer-logo" onerror="this.outerHTML='<span class=\'logo-text\'>Emebe</span>'">
+            </div>
+            <div class="footer-links">
+            </div>
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="proyectos.html" aria-label="Proyectos"><i class="ph-fill ph-folder-open"></i></a>
+                    <a href="https://www.instagram.com/estudio_emebe/" target="_blank" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@estudio_emebe" target="_blank" aria-label="TikTok"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61552558930244" target="_blank" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="https://wa.me/5493516534493" target="_blank" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/alzari555" target="_blank">alzari555</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('gallery-container');
+            const modal = document.getElementById('project-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const modalImages = document.getElementById('modal-images');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+
+            // Close modal events
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('closing');
+                setTimeout(() => {
+                    modal.close();
+                    modal.classList.remove('closing');
+                }, 300); // Matches CSS transition time
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) { // Click on pseudo-element backdrop
+                    modal.classList.add('closing');
+                    setTimeout(() => {
+                        modal.close();
+                        modal.classList.remove('closing');
+                    }, 300);
+                }
+            });
+
+            try {
+                // Fetch data with cache busting
+                const timestamp = new Date().getTime();
+                const response = await fetch(`data/proyectos.json?v=${timestamp}`, { cache: "no-store", headers: { 'Cache-Control': 'no-cache' } });
+                
+                if (!response.ok) throw new Error('Data not found');
+                
+                const data = await response.json();
+                const items = data.items || [];
+                
+                if (items.length === 0) {
+                    container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1;">Próximamente estaremos publicando nuestros proyectos.</p>';
+                    return;
+                }
+
+                items.forEach((item, index) => {
+                    // Valid formats: square, portrait, landscape
+                    const formatClass = `format-${item.format || 'square'}`;
+                    const shapeVal = item.image_shape || (item.format === 'square' ? 'quarter-circle-tr' : 'none');
+                    const imgCornerClass = shapeVal === 'none' ? '' : shapeVal;
+                    
+                    // Remover slash inicial para compatibilidad con Github Pages y archivos locales
+                    let imagePath = item.image || '';
+                    if (imagePath.startsWith('/')) {
+                        imagePath = imagePath.substring(1);
+                    }
+                    imagePath = imagePath.replace(/\.(png|jpe?g)$/i, '.webp');
+                    // We append a query param to dodge caching entirely
+                    const imgSrc = `${imagePath}?v=${timestamp}`;
+                    
+                    const div = document.createElement('div');
+                    div.className = `grid-item ${formatClass}`;
+                    div.dataset.index = index;
+                    div.innerHTML = `
+                        <div class="image-wrapper ${imgCornerClass}">
+                            <img src="${imgSrc}" alt="${item.title}" loading="lazy">
+                            <div class="overlay">
+                                <h3>${item.title}</h3>
+                                <span>Ver detalles <i class="ph ph-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    `;
+
+                    div.addEventListener('click', () => {
+                        openModal(item, timestamp);
+                    });
+
+                    container.appendChild(div);
+                    
+                    // Disparar redimensionamiento al cargar la foto
+                    const imgNode = div.querySelector('img');
+                    imgNode.addEventListener('load', () => {
+                        resizeGridItem(div, imgNode);
+                    });
+                });
+
+            } catch (error) {
+                console.error("Error loading portfolio:", error);
+                container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1;">No se pudieron cargar los proyectos. Intenta más tarde.</p>';
+            }
+
+            // JS Masonry Hack
+            function resizeGridItem(item, img) {
+                const rowHeight = 10;
+                const rowGap = 24; // 1.5rem = 24px
+                const gridColWidth = item.getBoundingClientRect().width;
+                
+                let targetHeight;
+                if (item.classList.contains('format-square')) {
+                    targetHeight = gridColWidth;
+                } else {
+                    const naturalRatio = img.naturalWidth / img.naturalHeight;
+                    if (!naturalRatio) return; 
+                    targetHeight = gridColWidth / naturalRatio;
+                }
+                
+                const rowSpan = Math.ceil((targetHeight + rowGap) / (rowHeight + rowGap));
+                item.style.gridRowEnd = "span " + rowSpan;
+            }
+
+            function resizeAllGridItems() {
+                const allItems = document.querySelectorAll('.grid-item');
+                allItems.forEach(item => {
+                    const img = item.querySelector('img');
+                    if(img && img.complete) {
+                        resizeGridItem(item, img);
+                    }
+                });
+            }
+
+            window.addEventListener('resize', resizeAllGridItems);
+
+            function openModal(item, timestamp) {
+                modalTitle.textContent = item.title;
+                modalDesc.textContent = item.description;
+                
+                let mainImgPath = item.image || '';
+                if (mainImgPath.startsWith('/')) mainImgPath = mainImgPath.substring(1);
+                mainImgPath = mainImgPath.replace(/\.(png|jpe?g)$/i, '.webp');
+                
+                // Add main image and extra images
+                let html = `<img src="${mainImgPath}?v=${timestamp}" alt="${item.title}" class="main-modal-img">`;
+                
+                if (item.gallery && item.gallery.length > 0) {
+                    item.gallery.forEach(gImg => {
+                        if(gImg.image) {
+                            let gImgPath = gImg.image;
+                            if (gImgPath.startsWith('/')) gImgPath = gImgPath.substring(1);
+                            gImgPath = gImgPath.replace(/\.(png|jpe?g)$/i, '.webp');
+                            html += `<img src="${gImgPath}?v=${timestamp}" alt="Galería de ${item.title}" class="extra-modal-img">`;
+                        }
+                    });
+                }
+                
+                modalImages.innerHTML = html;
+                modal.showModal();
+            }
+        });
+    </script>
+</body>
+</html>

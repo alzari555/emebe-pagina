@@ -20,6 +20,9 @@ permissions:
 jobs:
   optimize-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -57,11 +60,12 @@ jobs:
             fi
           done
           
-          # 3. Reescribir el portafolio.json para emparejar la extensión
-          if [ -f data/portafolio.json ]; then
-            # Buscar menciones de .jpg, .jpeg, .png insensibles a mayúsculas y cambiarlas a .webp
-            sed -i -E 's/\.(jpg|jpeg|png)(["'"'"'])/.webp\2/gI' data/portafolio.json
-          fi
+          # 3. Reescribir los JSONs para emparejar la extensión
+          for file in data/*.json; do
+            if [ -f "$file" ]; then
+              sed -i -E 's/\.(jpg|jpeg|png)(["'"'"'])/.webp\2/gI' "$file"
+            fi
+          done
 
       - name: Auto-Commit de JSON y Archivos Ligeros
         uses: stefanzweifel/git-auto-commit-action@v5

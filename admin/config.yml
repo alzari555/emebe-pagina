@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alzari555/emebe-pagina
+  repo: MB-interiorismo/studio
   branch: main
   site_domain: emebestudio.com
 
@@ -8,13 +8,26 @@ media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  - name: "portafolio"
-    label: "Portafolio"
+  - name: "inicio"
+    label: "Página de Inicio"
+    files:
+      - label: "Configuración de Inicio"
+        name: "inicio"
+        file: "data/inicio.json"
+        description: "Gestiona las imágenes de la página principal."
+        fields:
+          - {label: "Imagen Principal (Hero)", name: "hero_image", widget: "image"}
+          - {label: "Forma del Hero", name: "hero_shape", widget: "select", options: [{label: "Esquina truncada", value: "quarter-circle-tr"}, {label: "Forma orgánica (Blob)", value: "blob-shape"}, {label: "Normal", value: "none"}], default: "quarter-circle-tr"}
+          - {label: "Imagen de Servicios", name: "services_image", widget: "image"}
+          - {label: "Forma de Servicios", name: "services_shape", widget: "select", options: [{label: "Esquina truncada", value: "quarter-circle-tr"}, {label: "Forma orgánica (Blob)", value: "blob-shape"}, {label: "Normal", value: "none"}], default: "quarter-circle-tr"}
+          - {label: "Mapa de Alcance Nacional", name: "map_image", widget: "image", required: false}
+  - name: "proyectos"
+    label: "Proyectos"
     files:
       - label: "Gestor de Proyectos"
         name: "proyectos"
-        file: "data/portafolio.json"
-        description: "Añade, edita y organiza los proyectos que aparecerán en la galería de la página de portafolio."
+        file: "data/proyectos.json"
+        description: "Añade, edita y organiza los proyectos que aparecerán en la galería de la página de proyectos."
         fields:
           - label: "Proyectos"
             name: "items"
@@ -23,7 +36,8 @@ collections:
               - {label: "Título", name: "title", widget: "string"}
               - {label: "Descripción", name: "description", widget: "text"}
               - {label: "Imagen Principal", name: "image", widget: "image"}
-              - {label: "Formato en Grilla", name: "format", widget: "select", options: [{label: "Cuadrada (con esquina redondeada)", value: "square"}, {label: "Vertical", value: "portrait"}, {label: "Horizontal", value: "landscape"}], default: "square"}
+              - {label: "Formato en Grilla", name: "format", widget: "select", options: [{label: "Cuadrada", value: "square"}, {label: "Vertical", value: "portrait"}, {label: "Horizontal", value: "landscape"}], default: "square"}
+              - {label: "Forma de la imagen (Solo formato cuadrado)", name: "image_shape", widget: "select", options: [{label: "Esquina truncada", value: "quarter-circle-tr"}, {label: "Forma orgánica (Blob)", value: "blob-shape"}, {label: "Normal", value: "none"}], default: "quarter-circle-tr", required: false}
               - label: "Galería Adicional (Opcional)"
                 name: "gallery"
                 widget: "list"

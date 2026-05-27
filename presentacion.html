@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación Emebe | Mockup PDF</title>
+    <!-- Fuentes y estilos originales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Estilos de la Presentación */
+        body {
+            background-color: #2a2a2a;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .slide {
+            width: 1080px;
+            height: 720px;
+            padding: 55px;
+            box-sizing: border-box;
+            background-color: #f7f3ec;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contenedor Mockup */
+        .mockup-window {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: var(--color-bg-light);
+            box-shadow: 0 25px 60px rgba(131, 116, 95, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(136, 112, 80, 0.2);
+        }
+        
+        .mockup-header {
+            height: 36px;
+            background: #e6dfd5;
+            border-bottom: 1px solid #d1bb9e;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        .mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .mockup-dot.red { background: #ff5f56; }
+        .mockup-dot.yellow { background: #ffbd2e; }
+        .mockup-dot.green { background: #27c93f; }
+        
+        .mockup-body {
+            flex: 1;
+            position: relative;
+            background-color: var(--color-bg-light);
+            overflow: hidden;
+        }
+
+        /* Escalar contenido para que encaje como pantalla de escritorio (1440px) */
+        .scale-wrapper {
+            width: 1440px;
+            height: 900px;
+            transform: scale(0.6736); /* 970px (ancho disponible) / 1440px = 0.6736 */
+            transform-origin: top left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: visible; 
+        }
+        
+        /* Escala reducida específica para Proyectos */
+        .scale-wrapper-projects {
+            width: 1764px;
+            height: 1100px;
+            transform: scale(0.55); /* 970 / 1764 = 0.55 */
+            transform-origin: top left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: visible;
+        }
+
+        /* Escalar contenido de emails (doble layout) */
+        .scale-wrapper-email {
+            width: 1600px;
+            height: 1000px;
+            transform: scale(0.55);
+            transform-origin: top center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -800px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            padding-top: 70px;
+        }
+        
+        .slide-title {
+            position: absolute;
+            bottom: 22px;
+            right: 55px;
+            font-size: 13px;
+            color: #83745F;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            z-index: 10;
+        }
+        
+        /* Fiel a la grilla JS de Proyectos.html */
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-auto-rows: 10px !important;
+            grid-auto-flow: dense;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .presentation-grid .grid-item {
+            opacity: 1 !important;
+            animation: none !important;
+            transform: translateY(0) !important;
+        }
+        
+        .presentation-grid .image-wrapper:not(.quarter-circle-tr) {
+            border-radius: 0 !important;
+        }
+
+        .navbar-solid-override {
+            background-color: var(--color-bg-light);
+            border-bottom: 1px solid rgba(136, 112, 80, 0.2);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 720px;
+                margin: 0;
+            }
+            body {
+                background: none;
+                padding: 0;
+                gap: 0;
+                margin: 0;
+            }
+            .slide {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DIAPOSITIVA 1: Web Page - Home (Hero) -->
+    <div class="slide" style="background-color: #FFF0E0;">
+        <div class="mockup-window">
+            <div class="mockup-header">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-body">
+                <div class="scale-wrapper">
+                    <!-- Nav -->
+                    <header class="navbar" style="position:relative; z-index:100; padding: 2rem 0;">
+                        <div class="container nav-content">
+                            <div class="logo-link">
+                                <img src="assets/logo.png" alt="Emebe Logo" style="height: 48px; object-fit: contain;">
+                            </div>
+                            <nav class="nav-links">
+                                <a href="#">Servicios</a>
+                                <a href="#">Proyectos</a>
+                            </nav>
+                        </div>
+                    </header>
+                    <!-- Hero -->
+                    <section class="hero-section" style="padding-top: 5rem; min-height: 850px; align-items: flex-start; box-sizing: border-box;">
+                        <div class="container hero-content">
+                            <div class="hero-text" style="padding-top: 3rem;">
+                                <span class="subtitle">Diseño de Interiores</span>
+                                <h1>Espacios que cuentan <span class="cursive-text">historias</span></h1>
+                                <p>En Emebe, transformamos tu entorno en un refugio minimalista. Diseñamos con propósito, cuidando cada detalle para crear experiencias visuales y sensoriales únicas.</p>
+                            </div>
+                            <div class="hero-image-wrapper">
+                                <div class="offset-frame">
+                                    <div class="image-container quarter-circle-tr">
+                                        <img src="assets/hero_bg.png" alt="Interiorismo Minimalista" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 2: Web Page - Home (Scroll continuo) -->
+    <div class="slide" style="background-color: #FFF0E0;">
+        <div class="mockup-window">
+            <div class="mockup-header">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-body">
+                <!-- Simulando scroll moviendo el wrapper hacia arriba (-850px virtual = -575px real) -->
+                <div class="scale-wrapper" style="top: -575px;">
+                    
+                    <header class="navbar" style="position:relative; z-index:100; padding: 2rem 0; visibility: hidden;">
+                        <div class="container nav-content">
+                            <img src="assets/logo.png" alt="Emebe Logo" style="height: 48px; object-fit: contain;">
+                        </div>
+                    </header>
+                    
+                    <section class="hero-section" style="padding-top: 5rem; min-height: 850px; align-items: flex-start; box-sizing: border-box;">
+                        <!-- Spacer -->
+                    </section>
+
+                    <section class="services-section dark-bg" id="servicios">
+                        <div class="container services-grid">
+                            <div class="services-image-wrapper">
+                                <div class="offset-frame reverse-frame">
+                                    <div class="image-container quarter-circle-tr">
+                                        <img src="assets/services_bg.png" alt="Diseño de Habitación" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=800'">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services-text">
+                                <h2>Nuestros Servicios</h2>
+                                <ul class="services-list">
+                                    <li>
+                                        <span class="service-title">Reformas integrales</span>
+                                        <p>Transformamos espacios desde cero, ya sea en viviendas o locales comerciales. Nos ocupamos de todo el proceso: desde la idea inicial hasta la ejecución final, acompañándote en cada etapa para que el resultado sea funcional, estético y coherente.</p>
+                                    </li>
+                                    <li>
+                                        <span class="service-title">Logística y mobiliario a medida</span>
+                                        <p>Gestionamos cada detalle del proyecto para que no tengas que preocuparte por nada. Diseñamos y desarrollamos mobiliario personalizado, adaptado a tu espacio, tus necesidades y tu estilo de vida.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 3: Web Page - Proyectos -->
+    <div class="slide" style="background-color: #FFF0E0;">
+        <div class="mockup-window">
+            <div class="mockup-header">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-body">
+                <!-- Wrapper con escala reducida para mostrar más elementos de la grilla -->
+                <div class="scale-wrapper-projects">
+                    
+                    <header class="navbar navbar-solid-override" style="position:relative; z-index:100; padding: 2rem 0;">
+                        <div class="container nav-content" style="justify-content: center;">
+                            <div class="logo-link">
+                                <img src="assets/logo.png" alt="Emebe Logo" style="height: 48px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <section class="portfolio-content container" style="padding-top: 2rem;">
+                        <!-- Grilla sin blobs ni esquinas truncadas (sin quarter-circle-tr) -->
+                        <div class="portfolio-grid presentation-grid">
+                            
+                            <!-- 1: Square con esquina truncada -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper quarter-circle-tr">
+                                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Residencia Norte</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 2: Portrait -->
+                            <div class="grid-item format-portrait" style="grid-row-end: span 16;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Loft Centro</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 3: Square -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Estudio Creativo</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4: Square -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Refugio Sur</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 5: Landscape -->
+                            <div class="grid-item format-landscape" style="grid-row-end: span 14;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Casa de Campo</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 6: Portrait -->
+                            <div class="grid-item format-portrait" style="grid-row-end: span 16;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Villa Serrana</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 7: Square -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Oficinas Centrales</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 8: Landscape -->
+                            <div class="grid-item format-landscape" style="grid-row-end: span 14;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1000&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Departamento Moderno</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 9: Square -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Espacio Minimal</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 10: Square -->
+                            <div class="grid-item format-square" style="grid-row-end: span 12;">
+                                <div class="image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80" style="width:100%; height:100%; object-fit:cover;">
+                                    <div class="overlay" style="opacity: 1;">
+                                        <h3 style="transform: translateY(0);">Cocina Integral</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 4: Email Templates Combinados -->
+    <div class="slide" style="background-color: #FFF0E0;">
+        <div class="mockup-window">
+            <div class="mockup-header">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-body" style="background-color: #EFE5D8;">
+                <div class="scale-wrapper-email">
+                    
+                    <!-- PLANTILLA 1: Newsletter -->
+                    <div style="width: 600px;">
+                        <table style="width:100%; height:850px; border:none; border-spacing:0; background-color:#FFF2E1; border-radius:15px; overflow:hidden; box-shadow: 0px 10px 30px rgba(0,0,0,0.1);">
+                            <tr>
+                                <td style="padding:40px 0 30px 0; text-align:center;">
+                                    <img src="assets/Logo+membrete-beage.svg" alt="Emebe Estudio de Diseño" width="180" style="display:block;margin:0 auto;height:auto;max-width:100%;border:0;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0;text-align:center;">
+                                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="Proyecto Destacado" width="600" style="width:100%;max-width:600px;height:350px;object-fit:cover;display:block;border-top-right-radius: 40px;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:40px; font-family: 'Montserrat', sans-serif; color: #3a3229; height: 100%; vertical-align: top;">
+                                    <p style="margin:0 0 10px 0; font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#9B8364;">Novedades</p>
+                                    <h2 style="margin:0 0 20px 0; font-size:32px; line-height:1.2; font-family: 'Cormorant Garamond', serif; font-weight:400;">Diseño con un propósito claro</h2>
+                                    <p style="margin:0 0 25px 0; font-size:15px; line-height:1.8;">En Emebe transformamos tu entorno en un refugio minimalista. Cuidamos meticulosamente cada detalle para crear experiencias visuales y sensoriales ricas que se amolden perfectamente a tu estilo de vida.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0 30px 30px 30px; text-align:center; border-top:1px solid rgba(136, 112, 80, 0.2);">
+                                    <p style="margin:20px 0 10px 0; font-size:12px; color:#3a3229;">hola@emebestudio.com</p>
+                                    <p style="margin:0; font-size:10px; color:#3a3229; text-transform:uppercase; letter-spacing:1px; opacity:0.7;">&copy; 2026 Emebe Estudio.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- PLANTILLA 2: Contacto -->
+                    <div style="width: 600px;">
+                        <table style="width:100%; height:850px; border:none; border-spacing:0; background-color:#FFF2E1; border-radius:15px; overflow:hidden; box-shadow: 0px 10px 30px rgba(0,0,0,0.1);">
+                            <tr>
+                                <td style="padding:40px 30px; text-align:center; background-color:#83745F;">
+                                    <img src="assets/Logo+membrete-beage.svg" alt="Emebe Estudio de Diseño" width="180" style="display:block;margin:0 auto;height:auto;max-width:100%;border:0; filter: brightness(0) invert(1); -webkit-filter: brightness(0) invert(1);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:50px 40px; background-color:#FFF2E1; font-family: 'Montserrat', sans-serif; color: #3a3229; height: 100%; vertical-align: top;">
+                                    <p style="margin:0 0 20px 0; font-size:16px; line-height:1.6;">Hola <strong>[Nombre]</strong>,</p>
+                                    <p style="margin:0 0 20px 0; font-size:15px; line-height:1.7;">Gracias por contactarte con nuestro estudio. Hemos recibido tu mensaje y nos complace saber que confías en nosotros para tu proyecto.</p>
+                                    <p style="margin:0 0 40px 0; font-size:15px; line-height:1.7;">Nos pondremos en contacto contigo a la brevedad posible para conversar sobre los detalles y entender mejor tu visión y necesidades particulares.</p>
+                                    <p style="margin:0 0 10px 0; font-size:15px; line-height:1.6;">Afectuosamente,</p>
+                                    <p style="margin:0; font-size:32px; line-height:1; color:#9B8364; font-family: 'Great Vibes', cursive;">El Equipo de Emebe</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:30px; text-align:center; border-top:1px solid rgba(155, 131, 100, 0.3); background-color:#FFF2E1;">
+                                    <p style="margin:0; font-size:12px; font-family: 'Montserrat', sans-serif; color:#83745F; text-transform:uppercase; letter-spacing:1px;">Córdoba, Argentina | Diseño para todo el país.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

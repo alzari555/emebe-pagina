@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "test",
+      "description": "test",
+      "image": "/assets/uploads/services_bg.webp",
+      "format": "square",
+      "image_shape": "blob-shape",
+      "gallery": [
+        {
+          "image": "/assets/uploads/hero_bg.webp"
+        }
+      ]
+    },
+    {
+      "title": "couadrada",
+      "description": "test",
+      "image": "/assets/uploads/hero_bg.webp",
+      "format": "square",
+      "image_shape": "",
+      "gallery": []
+    }
+  ]
+}
