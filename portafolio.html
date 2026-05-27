@@ -121,7 +121,8 @@
                 items.forEach((item, index) => {
                     // Valid formats: square, portrait, landscape
                     const formatClass = `format-${item.format || 'square'}`;
-                    const imgCornerClass = item.format === 'square' ? 'quarter-circle-tr' : '';
+                    const shapeVal = item.image_shape || 'none';
+                    const imgCornerClass = shapeVal === 'none' ? '' : shapeVal;
                     
                     // Remover slash inicial para compatibilidad con Github Pages y archivos locales
                     let imagePath = item.image || '';
