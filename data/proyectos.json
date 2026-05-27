@@ -21,7 +21,7 @@
       "description": "a",
       "image": "/assets/uploads/pexels-emrecan-2079249.webp",
       "format": "portrait",
-      "image_shape": "quarter-circle-tr",
+      "image_shape": "none",
       "gallery": []
     },
     {
@@ -37,7 +37,7 @@
       "description": "a",
       "image": "/assets/uploads/pexels-vlada-karpovich-4050318.webp",
       "format": "landscape",
-      "image_shape": "quarter-circle-tr",
+      "image_shape": "none",
       "gallery": []
     },
     {
