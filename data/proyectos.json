@@ -13,7 +13,7 @@
       "description": "a",
       "image": "/assets/uploads/services_bg.webp",
       "format": "square",
-      "image_shape": "",
+      "image_shape": "none",
       "gallery": []
     },
     {
@@ -22,6 +22,14 @@
       "image": "/assets/uploads/pexels-emrecan-2079249.webp",
       "format": "portrait",
       "image_shape": "none",
+      "gallery": []
+    },
+    {
+      "title": "g",
+      "description": "g",
+      "image": "/assets/uploads/pexels-rachel-claire-4825713.webp",
+      "format": "landscape",
+      "image_shape": "blob-shape",
       "gallery": []
     },
     {
@@ -44,14 +52,6 @@
       "title": "f",
       "description": "a",
       "image": "/assets/uploads/pexels-leah-newhouse-50725-6480707.webp",
-      "format": "landscape",
-      "image_shape": "blob-shape",
-      "gallery": []
-    },
-    {
-      "title": "g",
-      "description": "g",
-      "image": "/assets/uploads/pexels-rachel-claire-4825713.webp",
       "format": "landscape",
       "image_shape": "blob-shape",
       "gallery": []
