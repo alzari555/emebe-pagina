@@ -1,23 +1,51 @@
 {
   "items": [
     {
-      "title": "test",
-      "description": "test",
-      "image": "/assets/uploads/services_bg.webp",
-      "format": "square",
-      "image_shape": "blob-shape",
-      "gallery": [
-        {
-          "image": "/assets/uploads/hero_bg.webp"
-        }
-      ]
+      "title": "a",
+      "description": "a",
+      "image": "/assets/uploads/pexels-amelia-hallsworth-5461644.jpg",
+      "format": "portrait",
+      "image_shape": "none",
+      "gallery": []
     },
     {
-      "title": "couadrada",
-      "description": "test",
-      "image": "/assets/uploads/hero_bg.webp",
+      "title": "b",
+      "description": "a",
+      "image": "/assets/uploads/services_bg.webp",
       "format": "square",
-      "image_shape": "",
+      "image_shape": "none",
+      "gallery": []
+    },
+    {
+      "title": "c",
+      "description": "a",
+      "image": "/assets/uploads/pexels-emrecan-2079249.jpg",
+      "format": "portrait",
+      "image_shape": "quarter-circle-tr",
+      "gallery": []
+    },
+    {
+      "title": "d",
+      "description": "a",
+      "image": "/assets/uploads/pexels-leah-newhouse-50725-6480707.jpg",
+      "format": "landscape",
+      "image_shape": "none",
+      "gallery": []
+    },
+    {
+      "title": "e",
+      "description": "a",
+      "image": "/assets/uploads/pexels-vlada-karpovich-4050318.jpg",
+      "format": "landscape",
+      "image_shape": "quarter-circle-tr",
+      "gallery": []
+    },
+    {
+      "title": "f",
+      "description": "a",
+      "image": "/assets/uploads/pexels-leah-newhouse-50725-6480707.jpg",
+      "format": "landscape",
+      "image_shape": "blob-shape",
       "gallery": []
     }
   ]
