@@ -163,7 +163,7 @@
                     imgPath = imgPath.replace(/\.(png|jpe?g)$/i, '.webp');
                     document.getElementById('hero-img').src = `${imgPath}?v=${timestamp}`;
                 }
-                const heroShape = data.hero_shape || 'quarter-circle-tr';
+                const heroShape = data.hero_shape || 'none';
                 document.getElementById('hero-frame').className = `image-container ${heroShape === 'none' ? '' : heroShape}`;
 
                 // Update Services
@@ -172,7 +172,7 @@
                     imgPath = imgPath.replace(/\.(png|jpe?g)$/i, '.webp');
                     document.getElementById('services-img').src = `${imgPath}?v=${timestamp}`;
                 }
-                const servicesShape = data.services_shape || 'quarter-circle-tr';
+                const servicesShape = data.services_shape || 'none';
                 document.getElementById('services-frame').className = `image-container ${servicesShape === 'none' ? '' : servicesShape}`;
 
                 // Update Map
