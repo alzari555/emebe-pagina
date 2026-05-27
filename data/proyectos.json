@@ -53,7 +53,7 @@
       "description": "g",
       "image": "/assets/uploads/pexels-rachel-claire-4825713.webp",
       "format": "square",
-      "image_shape": "none",
+      "image_shape": "blob-shape",
       "gallery": []
     },
     {
