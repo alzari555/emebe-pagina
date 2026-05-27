@@ -47,6 +47,22 @@
       "format": "landscape",
       "image_shape": "blob-shape",
       "gallery": []
+    },
+    {
+      "title": "g",
+      "description": "g",
+      "image": "/assets/uploads/pexels-rachel-claire-4825713.webp",
+      "format": "square",
+      "image_shape": "none",
+      "gallery": []
+    },
+    {
+      "title": "h",
+      "description": "h",
+      "image": "/assets/uploads/pexels-rachel-claire-4993081.webp",
+      "format": "portrait",
+      "image_shape": "none",
+      "gallery": []
     }
   ]
 }
