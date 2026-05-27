@@ -68,8 +68,8 @@
       "title": "j",
       "description": "j",
       "image": "/assets/uploads/pexels-toulouse-3457292.webp",
-      "format": "square",
-      "image_shape": "",
+      "format": "landscape",
+      "image_shape": "none",
       "gallery": []
     },
     {
