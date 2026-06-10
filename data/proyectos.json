@@ -10,11 +10,15 @@
     },
     {
       "title": "c",
-      "description": "a",
+      "description": "dgfbiusdgfiuesfgbikujdzbvfikudsfbgvikusdfv",
       "image": "/assets/uploads/pexels-emrecan-2079249.webp",
       "format": "portrait",
       "image_shape": "none",
-      "gallery": []
+      "gallery": [
+        {
+          "image": "/assets/uploads/Diseño sin título.webp"
+        }
+      ]
     },
     {
       "title": "g",
